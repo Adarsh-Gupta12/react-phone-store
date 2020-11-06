@@ -24,10 +24,15 @@ class NavBar extends Component {
      </ul>
      <Link to='/cart' className="ml-auto">
        <ButtonContainer>
-         <span className="mr-2">    
+         <span className="mr-2" >    
          <i className="fas fa-cart-plus" />
          </span>
          my cart
+       </ButtonContainer>
+     </Link>
+     <Link to='/login' className="ml-5">  
+       <ButtonContainer>
+         login
        </ButtonContainer>
      </Link>
      </NavWrapper>
@@ -38,7 +43,7 @@ class NavBar extends Component {
 const NavWrapper = styled.nav`
 background: var(--mainBlue);
 .nav-link{
-  color:var(mainWhite) !important;
+  color:var(--mainWhite) !important;
   font-size:1.3rem;
   text-transform:capitalize !important; 
 }
