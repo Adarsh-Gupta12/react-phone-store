@@ -18,7 +18,7 @@ export default class Admin extends Component {
     
     render() {
        if(this.state.loggedIn === false){
-            return <Redirect to="/" />
+            return <Redirect to="/login" />
         }
         return (
             <div>
