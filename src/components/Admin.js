@@ -7,7 +7,7 @@ export default class Admin extends Component {
         const  token = localStorage.getItem("token")
 
         let loggedIn = true
-        if(token != "abcd"){
+        if(token != "abd"){
             loggedIn = false
         }
 
