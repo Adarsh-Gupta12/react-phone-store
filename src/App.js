@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Switch,Router, Route} from 'react-router-dom';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./components/NavaBar";
+import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Details from "./components/Details";
 import Cart from "./components/Cart/Cart";
@@ -15,7 +15,7 @@ class App extends Component {
   render()  {
       return (
       <React.Fragment>
-        <NavBar></NavBar>
+ 
         <Switch>
           <Route exact path="/" component={ProductList}/>
           <Route path="/details" component={Details}/>

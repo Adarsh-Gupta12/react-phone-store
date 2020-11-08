@@ -4,13 +4,15 @@ import CartColumns from './CartColumns';
 import EmptyCart from "./EmptyCart";
 import {ProductConsumer} from '../../Context';
 import CartList from './CartList';
-import CartTotals from './CartTotals'
+import CartTotals from './CartTotals';
+import NavBar from '../NavBar.js'
 
 class Cart extends Component {
   state = {};
   render() {
     return (
       <section>
+        <NavBar></NavBar>
         <ProductConsumer>
           {value =>{
             const {cart} = value;
