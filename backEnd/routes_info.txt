@@ -1,0 +1,10 @@
+Every Route for admin only
+
+Signin: http://localhost:5000/api/signin 
+Signout: http://localhost:5000/api/signout
+
+Add product: http://localhost:5000/api/product/create/:userId
+Update product: http://localhost:5000/api/product/:productId/:userId
+Delete product: http://localhost:5000/api/product/:productId/:userId
+Read a single product: http://localhost:5000/api/product/:productId
+Read all products: http://localhost:5000/api/products
