@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"
-//import { isAuthenticated } from "../Login";
+
 
 const AddProduct = () => {
+
+    const isAuthenticated = () => {
+  if (typeof window == "undefined") {
+    return false;
+  }
+  if (localStorage.getItem("jwt")) {
+    return JSON.parse(localStorage.getItem("jwt"));
+  } else {
+    return false;
+  }
+};
+
+   let formData = new FormData();
   const { token , user } = isAuthenticated();
 
   const [values, setValues] = useState({
@@ -32,17 +45,26 @@ const AddProduct = () => {
     getaRedirect,
   } = values;
 
-  const isAuthenticated = () =>{
-        const  user = {
-      email:"user2@gmail.com",
-      password: "user2password"
-    }
-    axios.post("http://localhost:5000/api/signin", user).then((res) => {return res.data});
-    
-  }
+const createaProduct = (userId, token, product) => {
+  return fetch(`http://localhost:5000/api/product/create/${userId}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: product,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+
 
   const onSubmit = (event) => {
     event.preventDefault();
+   
     setValues({ ...values, error: "", loading: true });
     createaProduct(user._id, token, formData).then((data) => {
       if (data.error) {

@@ -10,6 +10,7 @@ import ProductList from './components/ProductList';
 import Modal from './components/Modal'
 import Admin from './components/Admin'
 import AddProduct from './components/component/add-product'
+import UpdateProduct from './components/component/update-product'
 
 
 class App extends Component {
@@ -23,8 +24,8 @@ class App extends Component {
           <Route path="/cart" component={Cart} />
           <Route path="/signin" component={Login} />
           <Route path="/admin" component={Admin} />
-          <Route exact path="/addProduct" component={AddProduct} />
-         
+          <Route path="/addProduct" component={AddProduct} />
+          <Route path="/updateProduct" component={UpdateProduct} />
           <Route component={Default}/>
         </Switch>
         <Modal />
