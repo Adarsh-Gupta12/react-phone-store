@@ -30,11 +30,7 @@ class NavBar extends Component {
          my cart
        </ButtonContainer>
      </Link>
-     <Link to='/signin' className="ml-5">  
-       <ButtonContainer>
-         login
-       </ButtonContainer>
-     </Link>
+    
      </NavWrapper>
       );
   }
